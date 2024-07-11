@@ -12,18 +12,19 @@ import domain.payment.PaymentException;
 import domain.room.RoomManager;
 import domain.room.RoomException;
 
-/**
+/*
+ *
  * Control class for Check-out Customer
  * 
  */
 public class CheckOutRoomControl {
 
-public void checkOut(String roomNumber) throws AppException {
+   public void checkOut(String roomNumber) throws AppException {
       try {
          // Assign room
          RoomManager roomManager = getRoomManager();
          Date stayingDate = roomManager.removeCustomer(roomNumber);
-         
+
          // Create payment
          PaymentManager paymentManager = getPaymentManager();
          paymentManager.consumePayment(stayingDate, roomNumber);
