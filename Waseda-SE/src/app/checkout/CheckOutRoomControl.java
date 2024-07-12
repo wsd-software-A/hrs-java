@@ -12,42 +12,41 @@ import domain.payment.PaymentException;
 import domain.room.RoomManager;
 import domain.room.RoomException;
 
-/**
+/*
+ *
  * Control class for Check-out Customer
  * 
  */
 public class CheckOutRoomControl {
-	
-	public void checkOut(String roomNumber) throws AppException {
-		try {
-			//Clear room
-			/*
-			 * Your code for clearing room by using domain.room.RoomManager
-			 */
-			//Consume payment
-			/*
-			 * Your code for consuming payment by using domain.payment.PaymentManager
-			 */
-		}
-		catch (RoomException e) {
-			AppException exception = new AppException("Failed to check-out", e);
-			exception.getDetailMessages().add(e.getMessage());
-			exception.getDetailMessages().addAll(e.getDetailMessages());
-			throw exception;
-		}
-		catch (PaymentException e) {
-			AppException exception = new AppException("Failed to check-out", e);
-			exception.getDetailMessages().add(e.getMessage());
-			exception.getDetailMessages().addAll(e.getDetailMessages());
-			throw exception;
-		}
-	}
 
-	private RoomManager getRoomManager() {
-		return ManagerFactory.getInstance().getRoomManager();
-	}
+   public void checkOut(String roomNumber) throws AppException {
+      try {
+         // Assign room
+         RoomManager roomManager = getRoomManager();
+         Date stayingDate = roomManager.removeCustomer(roomNumber);
 
-	private PaymentManager getPaymentManager() {
-		return ManagerFactory.getInstance().getPaymentManager();
-	}
+         // Create payment
+         PaymentManager paymentManager = getPaymentManager();
+         paymentManager.consumePayment(stayingDate, roomNumber);
+
+      } catch (RoomException e) {
+         AppException exception = new AppException("Failed to check-out", e);
+         exception.getDetailMessages().add(e.getMessage());
+         exception.getDetailMessages().addAll(e.getDetailMessages());
+         throw exception;
+      } catch (PaymentException e) {
+         AppException exception = new AppException("Failed to check-out", e);
+         exception.getDetailMessages().add(e.getMessage());
+         exception.getDetailMessages().addAll(e.getDetailMessages());
+         throw exception;
+      }
+   }
+
+   private RoomManager getRoomManager() {
+      return ManagerFactory.getInstance().getRoomManager();
+   }
+
+   private PaymentManager getPaymentManager() {
+      return ManagerFactory.getInstance().getPaymentManager();
+   }
 }

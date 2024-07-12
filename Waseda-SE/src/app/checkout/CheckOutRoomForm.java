@@ -11,26 +11,25 @@ import app.AppException;
  */
 public class CheckOutRoomForm {
 
-	private CheckOutRoomControl checkOutRoomControl = new CheckOutRoomControl();
+   private CheckOutRoomControl checkOutRoomControl = new CheckOutRoomControl();
 
-	private CheckOutRoomControl getCheckOutRoomControl() {
-		return checkOutRoomControl;
-	}
+   private CheckOutRoomControl getCheckOutRoomControl() {
+      return checkOutRoomControl;
+   }
 
-	private String roomNumber;
+   private String roomNumber;
 
-	public void checkOut() throws AppException {
-		/**
-		 * Your code for conducting check-out by using some Control object  
-		 */
-	}
+   public void checkOut() throws AppException {
+      CheckOutRoomControl checkOutRoomControl = getCheckOutRoomControl();
+      checkOutRoomControl.checkOut(roomNumber);
+   }
 
-	public String getRoomNumber() {
-		return roomNumber;
-	}
+   public String getRoomNumber() {
+      return roomNumber;
+   }
 
-	public void setRoomNumber(String roomNumber) {
-		this.roomNumber = roomNumber;
-	}
+   public void setRoomNumber(String roomNumber) {
+      this.roomNumber = roomNumber;
+   }
 
 }
