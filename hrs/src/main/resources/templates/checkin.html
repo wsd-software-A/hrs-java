@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>チェックイン</title>
+    <link th:href="@{/css/global.css}" rel="stylesheet" />
+    <link th:href="@{/css/reservation.css}" rel="stylesheet" />
+    <link th:href="@{/css/checkin.css}" rel="stylesheet" />
+    <link th:href="@{/css/components/header.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="c-header">
+      <nav class="c-header-nav">
+        <div>
+          <a class="el-top-link" href="/">HRS</a>
+        </div>
+        <ul class="w-header-nav-ul">
+          <li>
+            <a href="/reservation">予約</a>
+          </li>
+          <li>
+            <a href="/cancel">予約キャンセル</a>
+          </li>
+          <li><a href="/checkin">チェックイン</a></li>
+          <li><a href="/checkout">チェックアウト</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="c-body">
+      <div class="c-reservation">
+        <h1 class="el-h1">チェックイン</h1>
+        <p>予約番号を入力してください</p>
+        <form class="c-res-date-form">
+          <div class="w-res-date-input">
+            <div>
+              <label htmlFor="cancel-res-no">予約番号</label>
+              <input class="my-input" type="text" id="cancel-res-no" />
+            </div>
+          </div>
+          <button class="el-button" type="submit">チェックイン</button>
+        </form>
+      </div>
+      <div class="c-right">
+        <div class="w-room">
+          <h3>部屋</h3>
+          <p class="el-room-no">1001</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

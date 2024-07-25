@@ -1,0 +1,56 @@
+.c-body {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 40px 0px 60px 60px;
+}
+
+.c-reservation {
+  margin-top: 10px;
+}
+
+.el-h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.el-h1::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -20px;
+  width: 10px;
+  height: 1em;
+  background-color: #d9d9d9;
+  margin-right: 10px;
+}
+
+.c-res-date-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 20px 50px;
+}
+
+.w-res-date-input {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.i-res-m-d-input {
+  display: flex;
+  gap: 20px;
+}
+
+.el-button {
+  background-color: #a21127;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}

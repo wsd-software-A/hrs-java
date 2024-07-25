@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>ホーム画面</title>
+    <link th:href="@{/css/global.css}" rel="stylesheet" />
+    <link th:href="@{/css/home.css}" rel="stylesheet" />
+    <link th:href="@{/css/components/header.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="c-header">
+      <nav class="c-header-nav">
+        <div>
+          <a class="el-top-link" href="/">HRS</a>
+        </div>
+        <ul class="w-header-nav-ul">
+          <li>
+            <a href="/reservation">予約</a>
+          </li>
+          <li>
+            <a href="/cancel">予約キャンセル</a>
+          </li>
+          <li><a href="/checkin">チェックイン</a></li>
+          <li><a href="/checkout">チェックアウト</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="c-hero">
+      <h1>メインページ</h1>
+    </div>
+    <div class="c-buttons">
+      <a href="/reservation" class="el-button-lightred">予約</a>
+      <a href="/cancel" class="el-button-lightred">予約キャンセル</a>
+      <a href="/checkin" class="el-button-darkred">チェックイン</a>
+      <a href="/checkout" class="el-button-darkred">チェックアウト</a>
+    </div>
+  </body>
+</html>
