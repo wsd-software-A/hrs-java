@@ -1,0 +1,13 @@
+.el-button {
+  background-color: #a21127;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.el-button:hover {
+  opacity: 0.8;
+}

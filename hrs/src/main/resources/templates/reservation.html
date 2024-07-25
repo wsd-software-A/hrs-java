@@ -4,7 +4,13 @@
     <title>予約画面</title>
     <link th:href="@{/css/global.css}" rel="stylesheet" />
     <link th:href="@{/css/reservation.css}" rel="stylesheet" />
+    <link th:href="@{/css/components/button.css}" rel="stylesheet" />
     <link th:href="@{/css/components/header.css}" rel="stylesheet" />
+    <!-- <script
+      type="text/javascript"
+      th:src="@{/js/reservationHandler.js}"
+    ></script> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
     <div class="c-header">
@@ -28,24 +34,43 @@
       <div class="c-reservation">
         <h1 class="el-h1">予約</h1>
         <p>予約したい日を入力してください</p>
-        <form class="c-res-date-form">
+        <form
+          th:action="@{/api/reservation}"
+          th:object="${reservation}"
+          method="post"
+        >
           <div class="w-res-date-input">
             <div>
-              <input class="my-input" type="text" id="year" />
-              <label htmlFor="year">年</label>
+              <input
+                class="my-input"
+                type="text"
+                id="year"
+                th:field="*{stayingDate}"
+              />
+              <label for="year">年</label>
             </div>
             <div class="i-res-m-d-input">
               <div>
-                <input class="my-input" type="text" id="month" />
-                <label htmlFor="month">月</label>
+                <input
+                  class="my-input"
+                  type="text"
+                  id="month"
+                  th:field="*{stayingDate}"
+                />
+                <label for="month">月</label>
               </div>
               <div>
-                <input class="my-input" type="text" id="date" />
-                <label htmlFor="date">日</label>
+                <input
+                  class="my-input"
+                  type="text"
+                  id="day"
+                  th:field="*{stayingDate}"
+                />
+                <label for="day">日</label>
               </div>
             </div>
           </div>
-          <button class="el-button" type="submit">予約</button>
+          <input class="el-button" type="submit" name="submit" value="予約" />
         </form>
       </div>
       <div class="c-right"></div>

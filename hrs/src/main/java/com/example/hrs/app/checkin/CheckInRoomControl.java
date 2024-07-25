@@ -1,18 +1,18 @@
 /*
  * Copyright(C) 2007-2013 National Institute of Informatics, All rights reserved.
  */
-package app.checkin;
+package com.example.hrs.app.checkin;
 
 import java.util.Date;
 
-import app.AppException;
-import app.ManagerFactory;
-import domain.payment.PaymentManager;
-import domain.payment.PaymentException;
-import domain.reservation.ReservationManager;
-import domain.reservation.ReservationException;
-import domain.room.RoomManager;
-import domain.room.RoomException;
+import com.example.hrs.app.AppException;
+import com.example.hrs.app.ManagerFactory;
+import com.example.hrs.domain.payment.PaymentManager;
+import com.example.hrs.domain.payment.PaymentException;
+import com.example.hrs.domain.reservation.ReservationManager;
+import com.example.hrs.domain.reservation.ReservationException;
+import com.example.hrs.domain.room.RoomManager;
+import com.example.hrs.domain.room.RoomException;
 
 /**
  * Control class for Check-in Customer
